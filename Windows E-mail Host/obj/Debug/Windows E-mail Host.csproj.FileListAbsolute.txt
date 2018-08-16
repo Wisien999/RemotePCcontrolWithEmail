@@ -1,0 +1,36 @@
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\obj\Debug\Windows E-mail Host.csprojAssemblyReference.cache
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\obj\Debug\Windows E-mail Host.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\Windows E-mail Host.exe.config
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\Windows E-mail Host.exe
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\Windows E-mail Host.pdb
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\obj\Debug\Windows E-mail Host.csproj.CopyComplete
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\obj\Debug\Windows E-mail Host.exe
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\obj\Debug\Windows E-mail Host.pdb
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Common.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Dns.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Groupware.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Imap4.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Mail.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Nntp.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.OpenPGP.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Pop3.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Smtp.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.WhoIs.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Common.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Dns.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Imap4.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Mail.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Nntp.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.OpenPGP.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Pop3.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.Smtp.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\ActiveUp.Net.WhoIs.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\MailKit.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\MimeKit.dll
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\MailKit.xml
+C:\Users\Bartek\Documents\Coding\Windows E-mail Host\Windows E-mail Host\bin\Debug\MimeKit.xml
