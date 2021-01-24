@@ -32,7 +32,7 @@ namespace Windows_E_mail_Host
         private const string sendFilesFromDirectory = "SEND FOLDER";
         static string SSPatch = Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures);
 
-        static string replyTo = "wisnia3221@gmail.com";
+        static string replyTo = "***";
 
         static void Main(string[] args)
         {
