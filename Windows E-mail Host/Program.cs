@@ -23,8 +23,8 @@ namespace Windows_E_mail_Host
 {
     class Program
     {
-        private const string Login = "wisien.kontakt@gmail.com";
-        private const string Password = "3EDCVFR4rfvcde3";
+        private const string Login = "***@***.**";
+        private const string Password = "***";
 
         private const string cmdCommand = "CMD";
         private const string downloadAtt = "DOWNLOAD ATTACHMENT";
